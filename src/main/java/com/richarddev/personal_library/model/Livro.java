@@ -1,5 +1,6 @@
 package com.richarddev.personal_library.model;
 
+import com.richarddev.personal_library.enums.generoLivro;
 import com.richarddev.personal_library.enums.statusLeitura;
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,8 +29,9 @@ public class Livro {
     @Column(name = "publication_year")
     private int anoPublicacao;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "genre")
-    private String genero;
+    private generoLivro genero;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
