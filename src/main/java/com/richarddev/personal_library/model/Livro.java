@@ -27,7 +27,7 @@ public class Livro {
     private String autor;
 
     @Column(name = "publication_year")
-    private int anoPublicacao;
+    private Integer anoPublicacao;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "genre")
