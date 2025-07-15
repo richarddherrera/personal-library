@@ -9,8 +9,6 @@ import java.time.Year;
 
 public record DadosLivroCreate(
 
-
-
         @NotBlank(message = "O campo título nao pode ser vazio!")
         @Size(min = 3, max = 50, message = "O campo título deve ter entre {min} e {max} caractéres!")
         String titulo,
@@ -20,20 +18,15 @@ public record DadosLivroCreate(
         @Size(min = 3, max = 50, message = "O campo autor deve ter entre {min} e {max} caractéres!")
         String autor,
 
-
         @NotNull(message = "O campo Ano de Publicacao nao pode ser vazio")
         @Min(value = 1440)
         Integer anoPublicacao,
 
-
-
-        @NotBlank(message = "O campo gênero nao pode ser vazio")
+        @NotNull(message = "O campo gênero nao pode ser vazio")
         generoLivro genero,
 
-
-
-        @NotBlank(message = "O campo status nao pode ser vazio")
-        statusLeitura status)
+        @NotNull(message = "O campo status nao pode ser vazio")
+        statusLeitura status )
 {
 
         @AssertTrue(message = "O ano de publicação não pode ser maior que o ano atual")
