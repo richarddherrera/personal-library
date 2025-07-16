@@ -3,6 +3,7 @@ package com.richarddev.personal_library.controller;
 import com.richarddev.personal_library.dto.DadosLivroCreate;
 import com.richarddev.personal_library.dto.DadosLivroRead;
 import com.richarddev.personal_library.dto.DadosLivroUpdate;
+import com.richarddev.personal_library.enums.generoLivro;
 import com.richarddev.personal_library.model.Livro;
 import com.richarddev.personal_library.repository.LivroRepository;
 import jakarta.transaction.Transactional;
@@ -31,6 +32,22 @@ public class LivroController {
                .stream()
                .map(DadosLivroRead::new) // converte cada Livro em DadosLivroRead
                .toList();
+    }
+
+    @GetMapping("/genero/{genero}")
+    public List<DadosLivroRead> listarByGenero(@PathVariable generoLivro genero){
+        return livroRepository.findByGenero(genero)
+                .stream()
+                .map(DadosLivroRead::new) // converte cada Livro em DadosLivroRead
+                .toList();
+    }
+
+    @GetMapping("/titulo/{titulo}")
+    public List<DadosLivroRead> listarByTitulo (@PathVariable String titulo){
+        return livroRepository.findByTitulo(titulo)
+                .stream()
+                .map(DadosLivroRead::new)
+                .toList();
     }
 
     @PutMapping
