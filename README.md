@@ -115,6 +115,11 @@ O campo status e genero aceita apenas os valores definidos no enum.
 
 Flyway cuida automaticamente da criação da tabela livros.
 
+## Configuração
+
+Antes de rodar o projeto, crie o arquivo `src/main/resources/application.properties` com base no `application-example.properties`, preenchendo suas credenciais de banco de dados:
+
+
 ## 💡 Próximas Melhorias
 🔍 Filtros combinados por autor, ano, status etc.
 
