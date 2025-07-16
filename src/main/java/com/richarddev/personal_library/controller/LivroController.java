@@ -40,4 +40,10 @@ public class LivroController {
         livro.atualizarStatusLivro(dados);
 
     }
+
+    @DeleteMapping("{id}") // Parâmetro dinâmico, tem que ter o mesmo nome do atributo igualzinho
+    @Transactional
+    public void deletarLivro(@PathVariable Long id){ // Diz para pegar no caminho da url no postman, o número que vai ser o ID, e usamos ele como parâmetro
+        livroRepository.deleteById(id);
+    }
 }
