@@ -32,4 +32,12 @@ public class LivroController {
                .map(DadosLivroRead::new) // converte cada Livro em DadosLivroRead
                .toList();
     }
+
+    @PutMapping
+    @Transactional
+    public void atualizarLivro (@RequestBody @Valid DadosLivroUpdate dados){
+        var livro = livroRepository.getReferenceById(dados.id());
+        livro.atualizarStatusLivro(dados);
+
+    }
 }
