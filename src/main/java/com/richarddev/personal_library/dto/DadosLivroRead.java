@@ -15,12 +15,6 @@ public record DadosLivroRead(
         statusLeitura status) {
 
     public DadosLivroRead (Livro livro){
-        this(
-                livro.getId(),
-                livro.getTitulo(),
-                livro.getAutor(),
-                livro.getAnoPublicacao(),
-                livro.getGenero(),
-                livro.getStatus());
+        this(livro.getId(), livro.getTitulo(), livro.getAutor(), livro.getAnoPublicacao(), livro.getGenero(), livro.getStatus());
     }
 }

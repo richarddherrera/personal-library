@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface LivroRepository extends JpaRepository <Livro, Long> {
-    
+
     List<Livro> findByGenero (generoLivro genero);
 
     Optional<Livro> findByTitulo (String titulo);

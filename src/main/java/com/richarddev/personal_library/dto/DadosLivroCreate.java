@@ -29,9 +29,11 @@ public record DadosLivroCreate(
         statusLeitura status )
 {
 
-        @AssertTrue(message = "O ano de publicação não pode ser maior que o ano atual")
-        public boolean isAnoValido(){
-                return anoPublicacao <= Year.now().getValue(); // Se essa condição for verdadeira, o dado passou na validação! Se não chama a mensagem do @AssertTrue
+        @AssertTrue(message = "O ano de publicação não pode ser maior que o ano atual!")
+        public boolean isAnoValido() {
+                if (anoPublicacao == null) return true; // ou false, se preferir forçar que esse campo seja sempre válido
+                return anoPublicacao <= Year.now().getValue();
         }
+
 
 }
